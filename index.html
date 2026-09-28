@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>КРЕЙТ ГОУ 2 — Minecraft сервер</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="avatar.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="sky"></div>
+  <div class="stars"></div>
+  <div class="clouds"></div>
+
+  <main class="wrap">
+    <header class="hero">
+      <img class="avatar" src="avatar.png" alt="Аватарка КРЕЙТ ГОУ 2" />
+      <p class="badge">Minecraft · аддоны · Create</p>
+      <h1>КРЕЙТ ГОУ 2</h1>
+      <p class="lead">
+        Приватный сервер с модом <strong>Create</strong> и аддонами.
+        Собирай заводы, крути шестерёнки и открывай сундуки вместе с нами.
+      </p>
+    </header>
+
+    <section class="features">
+      <article>
+        <span>⚙️</span>
+        <h2>Create</h2>
+        <p>Конвейеры, механизмы и огромные постройки.</p>
+      </article>
+      <article>
+        <span>📦</span>
+        <h2>Крейты</h2>
+        <p>Лут, ивенты и сундуки с наградами.</p>
+      </article>
+      <article>
+        <span>🧩</span>
+        <h2>Аддоны</h2>
+        <p>Дополнения, которые делают выживание интереснее.</p>
+      </article>
+    </section>
+
+    <section class="card" id="gate">
+      <div class="step" id="step-iq">
+        <p class="step-label">Шаг 1 из 2</p>
+        <h2>Лёгкая IQ-задача</h2>
+        <p class="hint">Просто проверь, что ты не бот.</p>
+        <p class="question" id="question"></p>
+        <div class="answers" id="answers"></div>
+        <p class="error" id="iq-error" hidden></p>
+      </div>
+
+      <div class="step" id="step-nick" hidden>
+        <p class="step-label">Шаг 2 из 2</p>
+        <h2>Minecraft ник</h2>
+        <p class="hint">Напиши ник, с которым зайдёшь на сервер.</p>
+        <form id="nick-form">
+          <label for="nick">Ник</label>
+          <input
+            id="nick"
+            name="nick"
+            type="text"
+            maxlength="16"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Steve"
+          />
+          <p class="error" id="nick-error" hidden></p>
+          <button type="submit" class="btn">Продолжить</button>
+        </form>
+      </div>
+
+      <div class="step" id="step-join" hidden>
+        <p class="step-label">Готово</p>
+        <h2>Добро пожаловать, <span id="saved-nick"></span></h2>
+        <p class="hint">IQ пройден. Заходи в Telegram — там IP, правила и вайтлист.</p>
+        <a class="btn telegram" id="tg-link" href="https://t.me/+JKULMWOkqP4xNGQy" target="_blank" rel="noopener noreferrer">
+          Вступить в Telegram
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>КРЕЙТ ГОУ 2 · закрытый вход по ссылке</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

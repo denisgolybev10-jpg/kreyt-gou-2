@@ -1,0 +1,270 @@
+:root {
+  --bg: #070b0c;
+  --panel: #10181c;
+  --line: #1e2d33;
+  --grass: #5ad64a;
+  --grass-dark: #2f9a2a;
+  --dirt: #8b5a2b;
+  --text: #f4f7f2;
+  --muted: #9fb0a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Rubik, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+.sky,
+.stars,
+.clouds {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sky {
+  background:
+    radial-gradient(circle at 50% 18%, #16323a 0%, transparent 42%),
+    linear-gradient(#0a1214, #061014 55%, #08160f);
+  z-index: 0;
+}
+
+.stars {
+  background-image:
+    radial-gradient(1px 1px at 12% 18%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 78% 12%, #d7fff0 50%, transparent),
+    radial-gradient(1.5px 1.5px at 64% 28%, #fff 50%, transparent),
+    radial-gradient(1px 1px at 30% 40%, #b7ffd4 50%, transparent),
+    radial-gradient(1px 1px at 88% 48%, #fff 50%, transparent);
+  opacity: 0.55;
+  z-index: 1;
+}
+
+.clouds::before,
+.clouds::after {
+  content: "";
+  position: absolute;
+  height: 28px;
+  background: #d7e3e8;
+  border-radius: 4px;
+  opacity: 0.18;
+}
+
+.clouds::before {
+  width: 140px;
+  top: 11%;
+  left: 8%;
+  box-shadow: 28px -10px 0 #d7e3e8, 70px 4px 0 #d7e3e8;
+}
+
+.clouds::after {
+  width: 120px;
+  top: 16%;
+  right: 10%;
+  box-shadow: -24px -8px 0 #d7e3e8, 40px 6px 0 #d7e3e8;
+}
+
+.wrap {
+  position: relative;
+  z-index: 2;
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 36px 0 80px;
+}
+
+.hero {
+  text-align: center;
+}
+
+.avatar {
+  width: min(280px, 72vw);
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px #0d1a16, 0 18px 50px rgba(0, 0, 0, 0.45);
+  image-rendering: auto;
+}
+
+.badge {
+  display: inline-block;
+  margin: 22px 0 10px;
+  padding: 7px 12px;
+  border: 2px solid var(--grass-dark);
+  color: var(--grass);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Press Start 2P", monospace;
+  font-size: clamp(22px, 5vw, 42px);
+  line-height: 1.35;
+  margin: 0 0 16px;
+  text-shadow: 4px 4px 0 #000;
+}
+
+.lead {
+  margin: 0 auto;
+  max-width: 560px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 34px 0 22px;
+}
+
+.features article {
+  background: rgba(16, 24, 28, 0.86);
+  border: 2px solid var(--line);
+  padding: 16px;
+}
+
+.features span {
+  font-size: 22px;
+}
+
+.features h2,
+.card h2 {
+  margin: 8px 0 8px;
+  font-size: 18px;
+}
+
+.features p,
+.hint {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card {
+  background: rgba(16, 24, 28, 0.92);
+  border: 3px solid #1b3330;
+  box-shadow: 0 16px 0 #050808, inset 0 0 0 2px #0c1916;
+  padding: 28px;
+}
+
+.step-label {
+  margin: 0 0 8px;
+  color: var(--grass);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.question {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 16px 0;
+}
+
+.answers {
+  display: grid;
+  gap: 10px;
+}
+
+.answers button,
+.btn,
+input {
+  font: inherit;
+}
+
+.answers button,
+.btn {
+  cursor: pointer;
+  border: 0;
+  background: #182428;
+  color: var(--text);
+  padding: 14px 16px;
+  text-align: left;
+  border: 2px solid #2a3f45;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.answers button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  background: #203137;
+}
+
+.answers button.wrong {
+  border-color: #c45b5b;
+  background: #3a1c1c;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 14px;
+  background: var(--grass-dark);
+  border-color: var(--grass);
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn.telegram {
+  background: #1d8ad4;
+  border-color: #7ec8ff;
+}
+
+label {
+  display: block;
+  margin: 14px 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  color: var(--text);
+  background: #0b1214;
+  border: 2px solid #2a3f45;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--grass);
+}
+
+.error {
+  margin: 12px 0 0;
+  color: #ff8d8d;
+}
+
+footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #6d8078;
+  padding-bottom: 28px;
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
