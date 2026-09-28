@@ -1,4 +1,4 @@
-const TELEGRAM_URL = "https://t.me/+JKULMWOkqP4xNGQy";
+const TELEGRAM_URL = "https://t.me/+iXEe9Nt8a8w5Y2Zi";
 const NICK_RE = /^[A-Za-z0-9_]{3,16}$/;
 
 const questions = [
